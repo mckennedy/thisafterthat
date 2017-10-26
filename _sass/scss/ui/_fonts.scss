@@ -1,0 +1,29 @@
+//------------------------------------//
+//  $FONTS
+//------------------------------------//
+
+// include license if available
+
+@font-face {
+  font-family: 'ddc_hardwarecompressed';
+  src: url('../assets/fonts/ddchardware-compressed-webfont.woff2') format('woff2'),
+        url('../assets/fonts/ddchardware-compressed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ddc_hardwarecondensed';
+  src: url('../assets/fonts/ddchardware-condensed-webfont.woff2') format('woff2'),
+        url('../assets/fonts/ddchardware-condensed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ddc_hardware_regularregular';
+  src: url('../assets/fonts/ddchardware-regular-webfont.woff2') format('woff2'),
+        url('../assets/fonts/ddchardware-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
