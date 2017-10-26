@@ -1,0 +1,151 @@
+//------------------------------------//
+//  $LAYOUT
+//------------------------------------//
+
+body { 
+  min-width: $site-min-width; 
+  background: #101010;
+}
+
+.site-wrapper {
+  max-width: $site-wrapper-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  @include padding-horizontal($gutter);
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  color: tomato;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+
+  h1,
+  h2 { 
+    line-height: 0.9;
+    display: inline-flex; 
+    flex-direction: column; 
+    position: relative;
+  }
+
+  h1 {
+    border: 2px solid #ffd200;
+    margin-bottom: $half-spacing-unit * 1.1;
+    padding: 10px;
+  
+    span {
+      &:first-child {
+        font-size: rem(4.188);
+      }
+      &:nth-child(even) {
+        font-size: 80%;
+      }
+    }
+    small {
+      background: $black;
+      display: inline-block;
+      font-size: rem(1);
+      @include padding-horizontal(5px);
+      position: absolute;
+      left: 50%;
+      bottom: -9px;
+      transform: translateX(-50%);
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+    
+    span {
+      &:first-child {
+        font-size: rem(3.75);
+      }
+      &:last-child {
+        font-size: rem(1.938);
+      }
+    }
+  }
+}
+
+.triangle {
+  width: 30vw;
+	background-image: repeating-linear-gradient(0deg, #0092b7, #0092b7 1px, transparent 2px, transparent 8px);
+  position: absolute;
+  bottom: -21vw;
+
+  &.triangle-1 {
+    height: 26vw;
+    width: 30vw;
+    left: 0;
+    transform: rotate(135deg);
+  }
+  &.triangle-2 {
+    height: 32vw;
+    width: 28vw;
+    left: 18.9vw;
+    transform: rotate(-135deg);
+  }
+  &.triangle-3 {
+    height: 28vw;
+    width: 26vw;
+    left: 44.4vw;
+    transform: rotate(135deg);
+  }
+  &.triangle-4 {
+    height: 36vw;
+    width: 26vw;
+    right: 6vw;
+    transform: rotate(-135deg);
+  }
+  &.triangle-5 {
+    height: 22vw;
+    width: 26vw;
+    left: -12vw;
+    transform: rotate(-135deg);
+  }
+}
+
+.circle {
+  background: repeating-radial-gradient(circle at 50% 50%, SlateGray 1px, transparent 3px, transparent 7px, SlateGray 9px);  
+  border-radius: 50%;
+  height: 30vw;
+  width: 30vw;
+  position: absolute;
+  top: -20vw;
+
+  &.circle-1 {
+    left: -10vw;
+    height: 28vw;
+    width: 28vw;
+  }
+  &.circle-2 {
+    left: 6vw;
+    height: 32vw;
+    width: 32vw;
+  }
+  &.circle-3 {
+    left: 30vw;
+    height: 34vw;
+    width: 34vw;
+  }
+  &.circle-4 {
+    left: 60vw;
+    height: 30vw;
+    width: 30vw;
+  }
+  &.circle-5 {
+    left: 80vw;
+    height: 26vw;
+    width: 26vw;
+  }
+}
