@@ -55,11 +55,11 @@ section {
     small {
       background: $black;
       display: inline-block;
-      font-size: 2vw;
+      font-size: 1.8vw;
       @include padding-horizontal(5px);
       position: absolute;
       left: 50%;
-      bottom: -4.5%;
+      bottom: -4.3%;
       transform: translateX(-50%);
     }
   }
