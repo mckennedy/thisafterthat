@@ -40,15 +40,16 @@ section {
 
   h1 {
     border: 2px solid #ffd200;
+    font-size: 8.5vw;
     margin-bottom: $half-spacing-unit * 1.1;
     padding: 10px;
   
     span {
       &:first-child {
-        font-size: rem(4.188);
+        font-size: 10vw;
       }
       &:nth-child(even) {
-        font-size: 80%;
+        font-size: 7vw;
       }
     }
     small {
@@ -68,10 +69,10 @@ section {
     
     span {
       &:first-child {
-        font-size: rem(3.75);
+        font-size: 9.1vw;
       }
       &:last-child {
-        font-size: rem(1.938);
+        font-size: 4.7vw;
       }
     }
   }
