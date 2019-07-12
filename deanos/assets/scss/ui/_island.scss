@@ -17,6 +17,10 @@
   @include padding-vertical($base-spacing-unit);
 }
 
+.island--dubs {
+  @include padding-vertical($base-spacing-unit * 2);
+}
+
 .islet {
   @include padding-vertical($half-spacing-unit);
 }

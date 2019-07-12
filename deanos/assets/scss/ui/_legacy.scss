@@ -3,36 +3,27 @@
   color: $white;
   @include padding-vertical($base-spacing-unit * 4);
 
-  .legacy-carousel {
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $base-spacing-unit;
+    position: relative;
+    left: -$half-spacing-unit;
+  }
 
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      height: 100%;
-      width: calc(100% - 60px);
-      position: absolute;
-    }
-    &:before {
-      background: $gray-light;
-      top: -$base-spacing-unit;
-      left: 60px;
-      z-index: -1;
-    }
-    &:after {
-      background: $gray;
-      top: -$base-spacing-unit * 2;
-      left: 90px;
-      z-index: -2;
-    }
+  .nav-prev,
+  .nav-next {
+    background: $primary;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 0 $half-spacing-unit;
 
-    .owl-dots {
-      position: absolute;
-    }
-
-    .owl-item {
-      background: $white;
-      padding: $base-spacing-unit;
+    img {
+      width: 30%;
     }
   }
 }

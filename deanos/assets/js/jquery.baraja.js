@@ -298,12 +298,12 @@ jQuery.fn.reverse = [].reverse;
 				
 			this._setTransition( $item, 'transform', this.options.speed, this.options.easing );
 
-			this._applyTransition( $item, { transform : 'translate(' + translation + 'px) rotate(' + rotation + 'deg)' }, function() {
+			this._applyTransition( $item, { transform : 'translate(' + translation + 'px)' }, function() {
 
 				$item.off( self.transEndEventName );
 				self._updateStack( $item, dir );
 
-				self._applyTransition( $item, { transform : 'translate(0px) rotate(0deg)' }, function() {
+				self._applyTransition( $item, { transform : 'translate(0px)' }, function() {
 					
 					$item.off( self.transEndEventName );
 					self.isAnimating = false;
@@ -344,7 +344,7 @@ jQuery.fn.reverse = [].reverse;
 
 			$item.css( {
 				opacity : 0,
-				transform : 'scale(2) translate(100px) rotate(20deg)'
+				transform : 'scale(2) translate(100px)'
 			} );
 
 			this._updateStack( $item, 'prev' );
@@ -467,7 +467,7 @@ jQuery.fn.reverse = [].reverse;
 				// save..
 				$el.data( { translation : position, rotation : angle } );
 
-				self._applyTransition( $el, { transform : 'translate(' + position + 'px) rotate(' + angle + 'deg)' }, function() {
+				self._applyTransition( $el, { transform : 'translate(' + position + 'px,' + -position + 'px)' }, function() {
 
 					++cnt;
 					$el.off( self.transEndEventName );

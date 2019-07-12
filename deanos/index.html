@@ -179,6 +179,15 @@
             </li>
           </ul>
 
+          <nav class="actions">
+            <span id="nav-prev" class="nav-prev">
+              <img src="./assets/images/arrow-left.svg" />
+            </span>
+            <span id="nav-next" class="nav-next">
+              <img src="./assets/images/arrow-right.svg" />
+            </span>
+          </nav>
+
         </div>
       </div>
     </div>
@@ -374,7 +383,27 @@
 
   <script>
     $(document).ready(function(){
-      $( '#baraja-el' ).baraja();
+      var $el = $( '#baraja-el' ),
+      baraja = $el.baraja();
+      
+      baraja.fan( {
+        speed : 500,
+        easing : 'ease-out',
+        range : 20,
+        direction : 'left',
+        center : false,
+        origin : { x : 0, y : 0 },
+        translation : 56
+      } );
+
+      $( '#nav-prev' ).on( 'click', function( event ) {
+        baraja.previous();
+      } );
+
+      $( '#nav-next' ).on( 'click', function( event ) {
+        baraja.next();
+      } );
+
       $('.testimonials-carousel').owlCarousel({
         items: 1,
         loop: true,
