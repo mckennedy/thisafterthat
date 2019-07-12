@@ -1,0 +1,76 @@
+.site-header {
+  background: $secondary;
+  padding: $half-spacing-unit;
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  svg {
+    height: 40px;
+    width: 40px;
+
+    .st0 {
+      fill: $primary;
+    }
+    .st1{
+      fill: $white;
+    }
+  }
+  
+  .site-nav {
+    // transform: translateX(10.35%);
+    
+    ul {
+      border: 1px solid $tertiary;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      border-right: 1px solid $tertiary;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-width: 167px;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  a {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-head-secondary;
+    font-size: 1.571rem;
+    letter-spacing: 0.1rem;
+    max-height: 100%;
+    @include padding-horizontal($base-spacing-unit);
+    text-transform: uppercase;
+    width: 100%;
+    transition: background 0.4s ease;
+
+    &:hover {
+      background: $primary;
+      text-decoration: none;
+    }
+  }
+
+  .site-branding a:hover {
+    background: transparent;
+  }
+
+  .btn {
+    height: 40px;
+  }
+}

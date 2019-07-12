@@ -1,0 +1,38 @@
+.legacy {
+  background: $tertiary;
+  color: $white;
+  @include padding-vertical($base-spacing-unit * 4);
+
+  .legacy-carousel {
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: calc(100% - 60px);
+      position: absolute;
+    }
+    &:before {
+      background: $gray-light;
+      top: -$base-spacing-unit;
+      left: 60px;
+      z-index: -1;
+    }
+    &:after {
+      background: $gray;
+      top: -$base-spacing-unit * 2;
+      left: 90px;
+      z-index: -2;
+    }
+
+    .owl-dots {
+      position: absolute;
+    }
+
+    .owl-item {
+      background: $white;
+      padding: $base-spacing-unit;
+    }
+  }
+}

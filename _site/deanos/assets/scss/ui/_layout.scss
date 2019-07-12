@@ -1,0 +1,17 @@
+//------------------------------------//
+//  $LAYOUT
+//------------------------------------//
+
+body { 
+  min-width: $site-min-width; 
+  overflow-x: hidden;
+}
+
+.inner {
+  max-width: $site-wrapper-max-width;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include padding-horizontal($gutter);
+}
+
