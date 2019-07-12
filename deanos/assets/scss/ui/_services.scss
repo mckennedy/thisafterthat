@@ -2,11 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $base-spacing-unit * 2;
+  padding: ($base-spacing-unit * 2) 0;
+
+  @include media($from: lap) {
+    padding: $base-spacing-unit * 2;
+  }
 
   .services-list {
     border: 1px solid $tertiary;
+    border-bottom: 0;
+    border-right: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     list-style: none;
     margin: 0 auto;
@@ -14,7 +21,12 @@
     max-width: 1460px;
     width: 100%;
 
+    @include media($from: lap) {
+      border-right: 1px solid $tertiary;
+    }
+
     li {
+      border-bottom: 1px solid $tertiary;
       border-right: 1px solid $tertiary;
       display: flex;
       flex-direction: column;
@@ -22,10 +34,15 @@
       justify-content: flex-end;
       padding: ($half-spacing-unit * 1.5) $base-spacing-unit;
       position: relative;
-      width: 25%;
+      width: 50%;
 
-      &:last-child {
-        border-right: 0;
+      @include media($from: lap) {
+        border-right: 1px solid $tertiary;
+        width: 25%;
+
+        &:last-child {
+          border-right: 0;
+        }
       }
 
       &:hover {

@@ -1,8 +1,11 @@
 .faq {
   background: $tertiary;
   color: $white;
-  padding-right: $base-spacing-unit;
   @include padding-vertical($base-spacing-unit * 4);
+
+  @include media($from: desk) {
+    padding-right: $base-spacing-unit;
+  }
   
   .accordion {
     border: 1px solid $quaternary;
@@ -60,7 +63,7 @@
     border-radius: 0;
     color: $white;
     line-height: 1.1;
-    padding: $half-spacing-unit * 1.2;
+    padding: ($half-spacing-unit * 1.2) 62px ($half-spacing-unit * 1.2) ($half-spacing-unit * 1.2);
     text-align: left;
     width: 100%;
     position: relative;

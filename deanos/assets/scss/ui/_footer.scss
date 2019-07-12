@@ -1,7 +1,11 @@
 .footer {
   background: $secondary;
   color: $white;
-  padding: 4rem;
+  padding: 4rem 0;
+
+  @include media($from: desk) {
+    padding: 4rem;
+  }
 
   .actual-footer {
     border: 1px solid $tertiary;
@@ -21,13 +25,23 @@
       align-items: center;
       justify-content: center;
 
+      &:first-child {
+        border-bottom: 1px solid $tertiary;
+        padding: $half-spacing-unit;
+
+        @include media($from: desk) {
+          border-bottom: 0;
+        }
+      }
+
       &:last-child {
         border-right: 0;
       }
     }
 
     svg {
-      width: 232px;
+      max-width: 232px;
+      width: 100%;
 
       .st0 {
         fill: $white;

@@ -1,6 +1,6 @@
 .site-header {
   background: $secondary;
-  padding: $half-spacing-unit;
+  @include padding-vertical($half-spacing-unit);
 
   .inner {
     display: flex;
@@ -66,8 +66,12 @@
     }
   }
 
-  .site-branding a:hover {
-    background: transparent;
+  .site-branding a {
+    padding: 0;
+
+    &:hover {
+      background: transparent;
+    }
   }
 
   .btn {

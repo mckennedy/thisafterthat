@@ -5,8 +5,12 @@
 
   .owl-carousel {
     border: 1px solid $secondary;
-    padding: $base-spacing-unit * 2;
+    padding: ($base-spacing-unit * 2) $base-spacing-unit;
     position: relative;
+
+    @include media($from: desk) {
+      padding: $base-spacing-unit * 2;
+    }
   }
   .owl-item {
     display: flex;
