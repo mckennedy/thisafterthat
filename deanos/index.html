@@ -41,10 +41,11 @@
   <link rel="stylesheet" href="./assets/css/application.css" type="text/css" />
 </head>
 <body>
+  <div id="top"></div>
   <header class="site-header">
     <div class="inner">
       <div class="site-branding">
-        <a href="#"><span class="visuallyhidden">Deano's</span>
+        <a href="#top"><span class="visuallyhidden">Deano's</span>
 
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
           <symbol  id="logo" viewBox="-19 -19 38 38">
@@ -62,6 +63,17 @@
         </a>
       </div>
 
+      <div class="nav-toggle hidden-desk-and-up" style="width:40px; height: 40px;">
+        <input id="menu-71" type="checkbox" style="display: none">
+        <label for="menu-71">
+          <div class="menu" style="transition: all 0.52s;position: relative;width: 40px;height: 40px;border-radius: 100%;cursor: pointer;">
+            <div class="menu_part" style="width: 38px; height: 2px; position: absolute; background: #fff; right: 0; margin: auto; left: 0; border-radius: 0px; transition: all 0.52s cubic-bezier(0.8, 0, 0.1, 0.8); width:20;top: calc(50% - ((5px)) + -2px);"></div>
+            <div class="menu_part" style="width: 38px; height: 2px; position: absolute; background: #fff; right: 0; margin: auto; left: 0; border-radius: 0px; transition: all 0.52s cubic-bezier(0.8, 0, 0.1, 0.8); width:20;top: calc(50% - ((5px)) + 4px);"></div>
+            <div class="menu_part" style="width: 38px; height: 2px; position: absolute; background: #fff; right: 0; margin: auto; left: 0; border-radius: 0px; transition: all 0.52s cubic-bezier(0.8, 0, 0.1, 0.8); width:20;top: calc(50% - ((5px)) + 10px);"></div>
+          </div>
+        </label>
+      </div>
+
       <nav class="site-nav hidden-below-lap">
         <ul>
           <li><a href="#services">Services</a></li>
@@ -72,7 +84,7 @@
         </ul>
       </nav>
 
-      <button class="btn">Book Time</button>
+      <button class="btn">Book App<span class="hidden-below-desk">oin</span>t<span class="hidden-below-desk">ment</span></button>
     </div>
   </header>
 
@@ -199,26 +211,11 @@
         </div>
         <div class="g desk-two-thirds">
 
-          <ul id="baraja-el" class="baraja-container">
-            <li>
-              <img src="./assets/images/placedholder-shop-1.jpg" alt="shop" />
-            </li>
-            <li>
-              <img src="./assets/images/placedholder-shop-2.jpg" alt="shop" />
-            </li>
-            <li>
-              <img src="./assets/images/placedholder-shop-3.jpg" alt="shop" />
-            </li>
-          </ul>
-
-          <nav class="actions">
-            <span id="nav-prev" class="nav-prev">
-              <img src="./assets/images/arrow-left.svg" />
-            </span>
-            <span id="nav-next" class="nav-next">
-              <img src="./assets/images/arrow-right.svg" />
-            </span>
-          </nav>
+          <div class="legacy-carousel owl-carousel owl-theme">
+            <div><img src="./assets/images/placedholder-shop-1.jpg" alt="shop" /></div>
+            <div><img src="./assets/images/placedholder-shop-2.jpg" alt="shop" /></div>
+            <div><img src="./assets/images/placedholder-shop-3.jpg" alt="shop" /></div>
+          </div>
 
         </div>
       </div>
@@ -406,35 +403,27 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="./assets/js/modernizr.custom.79639.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./assets/js/util.js"></script>
   <script src="./assets/js/collapse.js"></script>
-  <script src="./assets/js/owl.carousel.min.js"></script>
-  <script src="./assets/js/jquery.baraja.js"></script>
+  <script src="./assets/js/owl.carousel.min.js"></script>t>
 
   <script>
     $(document).ready(function(){
-      var $el = $( '#baraja-el' ),
-      baraja = $el.baraja();
-      
-      baraja.fan( {
-        speed : 500,
-        easing : 'ease-out',
-        range : 20,
-        direction : 'left',
-        center : false,
-        origin : { x : 0, y : 0 },
-        translation : 56
+
+      $( '#menu-71' ).on( 'click', function() {
+        $('.site-nav').toggleClass('opened');
       } );
 
-      $( '#nav-prev' ).on( 'click', function( event ) {
-        baraja.previous();
-      } );
-
-      $( '#nav-next' ).on( 'click', function( event ) {
-        baraja.next();
-      } );
+      $('.legacy-carousel').owlCarousel({
+        items: 1,
+        animateIn: 'rotateInDownRight',
+        animateOut: 'rotateOutDownRight',
+        loop: true,
+        nav: true,
+        dots: true,
+        navText: "",
+      });
 
       $('.testimonials-carousel').owlCarousel({
         items: 1,
@@ -442,7 +431,6 @@
         nav: true,
         dots: false,
         navText: "",
-        mouseDrag: false
       });
     });
 
@@ -450,6 +438,9 @@
 
 		$('a[href*="#"]').on('click', function(e) {
       e.preventDefault()
+
+      $('#menu-71').prop('checked', false);
+      $('.site-nav').removeClass('opened');
 
       $('html, body').animate(
         {
@@ -459,6 +450,23 @@
         'linear'
       )
     })
+
+    $(document).on("scroll", onScroll);
+
+    function onScroll(event){
+      var scrollPos = $(document).scrollTop() + 68;
+      $('.site-nav a').each(function () {
+          var currLink = $(this);
+          var refElement = $(currLink.attr("href"));
+          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+              $('.site-nav ul li a').removeClass("active");
+              currLink.addClass("active");
+          }
+          else {
+              currLink.removeClass("active");
+          }
+      });
+    }
   </script>
 </body>
 </html>
