@@ -65,10 +65,12 @@
 
       svg {
         margin-bottom: $half-spacing-unit;
+        margin-top: $half-spacing-unit;
         max-height: 90px;
         max-width: 90px;
 
         @include media($from: lap) {
+          margin-top: 5px;
           max-height: 70px;
           max-width: 70px;
         }
@@ -81,13 +83,11 @@
   }
 
   .hover-details {
-    border-top: 1px solid $tertiary;
     color: $tertiary;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: $base-spacing-unit;
-    padding: $half-spacing-unit $base-spacing-unit;
+    padding: $half-spacing-unit $base-spacing-unit 0;
     position: relative;
     top: 0;
     left: 0;
@@ -97,9 +97,9 @@
 
     @include media($from: desk) {
       background: $primary;
-      border-top: 0;
       color: $white;
       margin-top: 0;
+      padding: $half-spacing-unit $base-spacing-unit;
       position: absolute;
       opacity: 0;
     }
