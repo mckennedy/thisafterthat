@@ -51,6 +51,7 @@ section {
     font-size: 8.5vw;
     margin-bottom: 2.5vw;
     padding: 1.8vw;
+    @include long-shadow(text, $red, 100, false, false, left);
   
     span {
       &:first-child {
