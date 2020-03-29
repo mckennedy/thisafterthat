@@ -52,9 +52,10 @@ section {
     margin-bottom: 2.5vw;
     padding: 1.8vw;
     -webkit-font-smoothing: antialiased;
-    @include long-shadow(text, $red, 100, false, false, left);
   
     span {
+      @include long-shadow(text, $red, 100, false, false, left);
+      
       &:first-child {
         font-size: 10vw;
       }
