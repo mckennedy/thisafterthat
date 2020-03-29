@@ -88,6 +88,12 @@ section {
   }
 }
 
+.work {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .triangle {
   width: 30vw;
 	background-image: repeating-linear-gradient(0deg, #0092b7, #0092b7 1px, transparent 2px, transparent 8px);
