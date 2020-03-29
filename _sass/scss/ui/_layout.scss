@@ -54,8 +54,8 @@ section {
     -webkit-font-smoothing: antialiased;
   
     span {
-      @include long-shadow(text, $red, 100, false, false, left);
-      
+      @include long-shadow(text, $black, 100, false, false, left);
+
       &:first-child {
         font-size: 10vw;
       }
@@ -63,16 +63,17 @@ section {
         font-size: 7vw;
       }
     }
-    small {
-      background: #101010;
-      display: inline-block;
-      font-size: 1.8vw;
-      @include padding-horizontal(5px);
-      position: absolute;
-      left: 50%;
-      bottom: -4.3%;
-      transform: translateX(-50%);
-    }
+  }
+
+  small {
+    background: #101010;
+    display: inline-block;
+    font-size: 1.8vw;
+    @include padding-horizontal(5px);
+    position: absolute;
+    left: 50%;
+    bottom: -4.3%;
+    transform: translateX(-50%);
   }
 
   h2 {
