@@ -35,6 +35,18 @@ section {
   overflow: hidden;
 }
 
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .title {
   color: tomato;
   height: 100%;
