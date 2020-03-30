@@ -19,6 +19,11 @@ body {
   max-width: $site-wrapper-max-width;
   margin-left: auto;
   margin-right: auto;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
   @include padding-horizontal($gutter);
 }
 
